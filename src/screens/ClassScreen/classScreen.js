@@ -5,17 +5,20 @@ import barbarian from '../../assets/images/barbarian-photo.png';
 import barbarianIcon from '../../assets/icons/barbarian-icon.png';
 import styles from './ClassScreenStyles';
 import background from '../../assets/images/background.png';
-import renderClass from './ClassScreenConstants';
+import RenderClass from './RenderClass';
 
 const ClassScreen = ({navigation}) => {
+  const renderItem = ({item}) => (
+    <RenderClass item={item} navigation={navigation} />
+  );
+
   return (
     <View>
       <ImageBackground source={background} style={styles.imageBackground}>
         <FlatList
           data={classData}
-          renderItem={renderClass}
+          renderItem={renderItem}
           keyExtractor={item => item.id}
-          navigation={navigation}
           numColumns={2}
         />
       </ImageBackground>

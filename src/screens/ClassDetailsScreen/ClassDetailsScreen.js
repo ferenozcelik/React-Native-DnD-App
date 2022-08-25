@@ -1,10 +1,11 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const ClassDetailsScreen = () => {
+const ClassDetailsScreen = ({route, navigation}) => {
+  const {item} = route.params;
   return (
     <View>
-      <Text>ClassDetailsScreen</Text>
+      <Text>{item.className}</Text>
     </View>
   );
 };

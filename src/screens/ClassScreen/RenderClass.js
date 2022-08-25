@@ -9,7 +9,7 @@ import {
 import React from 'react';
 import styles from './ClassScreenStyles';
 
-const renderClass = props => {
+const RenderClass = props => {
   const item = props.item;
   const navigation = props.navigation;
   return (
@@ -20,12 +20,10 @@ const renderClass = props => {
           {marginBottom: item.id === ('11' || '12') ? 110 : 0},
         ]}>
         <Image source={item.image} />
+
         <TouchableOpacity
           onPress={() => {
-            // navigation.navigate('ClassDetailsScreen', {
-            //   item: item,
-            // });
-            console.log(navigation);
+            navigation.navigate('ClassDetailsScreen', {item: item});
           }}>
           <View style={[styles.cardInfoBox, styles.shadow]}>
             <View style={styles.titleWrapper}>
@@ -59,4 +57,4 @@ const renderClass = props => {
   );
 };
 
-export default renderClass;
+export default RenderClass;
