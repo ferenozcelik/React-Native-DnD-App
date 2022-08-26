@@ -1,15 +1,8 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  FlatList,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './ClassScreenStyles';
 
-const RenderClass = props => {
+const ClassCard = props => {
   const item = props.item;
   const navigation = props.navigation;
   return (
@@ -57,4 +50,4 @@ const RenderClass = props => {
   );
 };
 
-export default RenderClass;
+export default ClassCard;

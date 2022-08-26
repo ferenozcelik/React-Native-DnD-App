@@ -1,13 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 
 import ClassScreen from './src/screens/ClassScreen/ClassScreen';
+import RaceScreen from './src/screens/RaceScreen/RaceScreen';
 import DiceScreen from './src/screens/DiceScreen/DiceScreen';
 import ClassDetailsScreen from './src/screens/ClassDetailsScreen/ClassDetailsScreen';
 import colors from './src/assets/colors/colors';
@@ -53,10 +52,30 @@ const TabNavigator = () => {
       />
 
       <Tab.Screen
+        name="RaceScreen"
+        component={RaceScreen}
+        options={{
+          tabBarColor: colors.darkgreen,
+          headerShown: false,
+          tabBarLabel: (
+            <Text style={{fontSize: 12, fontFamily: 'Lato-Bold'}}>Races</Text>
+          ),
+          tabBarIcon: ({color}) => (
+            <Feather
+              name="disc"
+              size={24}
+              color={color}
+              // style={{paddingTop: 5}}
+            />
+          ),
+        }}
+      />
+
+      <Tab.Screen
         name="DiceScreen"
         component={DiceScreen}
         options={{
-          tabBarColor: colors.darkgreen,
+          tabBarColor: colors.purple,
           headerShown: false,
           tabBarLabel: (
             <Text
